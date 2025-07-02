@@ -35,7 +35,6 @@ for (var c = 0; c < brickColumnCount; c++) {
   }
 }
 
-// écoute les touches pressées
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
@@ -63,7 +62,7 @@ function collisionDetection() {
     }
   }
 }
-
+// détéction de la pression de touches 
 function keyDownHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
     rightPressed = true;
@@ -71,7 +70,7 @@ function keyDownHandler(e) {
     leftPressed = true;
   }
 }
-
+//détéction de l'arret d'appui sur une touche
 function keyUpHandler(e) {
   if (e.key == "Right" || e.key == "ArrowRight") {
     rightPressed = false;
@@ -79,16 +78,15 @@ function keyUpHandler(e) {
     leftPressed = false;
   }
 }
-
+//affichage de la balle
 function drawBall() {
-  // ctx.arc() dessine un cercle (la balle)
   ctx.beginPath();
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
   ctx.fillStyle = "#0095DD";
   ctx.fill();
   ctx.closePath();
 }
-
+//affichage de la platforme
 function drawPaddle() {
   ctx.beginPath();
   ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
@@ -96,7 +94,7 @@ function drawPaddle() {
   ctx.fill();
   ctx.closePath();
 }
-
+//affichage des briques 
 function drawBricks() {
   for (var c = 0; c < brickColumnCount; c++) {
     for (var r = 0; r < brickRowCount; r++) {
@@ -114,21 +112,20 @@ function drawBricks() {
     }
   }
 }
-
+//affichage du score
 function drawScore() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#0095DD";
   ctx.fillText("Score: " + score, 8, 20);
 }
-
+//affichage des vies
 function drawLives() {
   ctx.font = "16px Arial";
   ctx.fillStyle = "#0095DD";
   ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
-
+//affichage global du jeu, les differentes fonctions d'affichage sont appelés
 function draw() {
-  // ctx.clearRect() efface le canvas avant chaque frame
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawBricks();
   drawBall();
@@ -168,7 +165,6 @@ function draw() {
 
   x += dx;
   y += dy;
-  // requestAnimationFrame() relance la fonction draw à la frame suivante
   requestAnimationFrame(draw);
 }
 
