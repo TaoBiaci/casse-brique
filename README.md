@@ -1,5 +1,5 @@
 Ce dépôt contient un simple jeu de casse-briques en html5/Javascript
-Ce n'est pas moi qui l'ai codé, l'objectif de ce dépôt était de m'apprendre a utiliser git et github, 
+Ce n'est pas moi qui l'ai codé, l'objectif de ce dépôt était d'utiliser git et github, 
 pour ensuite etudier le script et comment fonctionne-t-il
 voici le détail de plusieurs fonctions utilisés dans le script:
 
